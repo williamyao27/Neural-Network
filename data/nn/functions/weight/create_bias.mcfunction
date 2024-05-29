@@ -1,0 +1,1 @@
+$execute store result storage nn:weights $(layer)_$(to)_bias float 0.001 run random value -1000..1000
