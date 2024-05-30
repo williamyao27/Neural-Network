@@ -1,0 +1,1 @@
+execute as @e[type=marker,tag=input] at @s run function nn:model/input/set_neuron with entity @s data

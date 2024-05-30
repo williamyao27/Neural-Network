@@ -5,16 +5,19 @@ kill @e[type=marker,tag=neuron]
 summon marker 0 0.5 0 {Tags:["spawner"]}
 
 # Input layer
-execute as @e[type=marker,tag=spawner,limit=1,sort=nearest] at @s run function nn:neuron/create_inputs
+execute as @e[type=marker,tag=spawner,limit=1,sort=nearest] at @s run function nn:neuron/create_input_layer
 
 # Hidden layer 1
-tp @e[type=marker,tag=spawner,limit=1,sort=nearest] 14 0 -10
+tp @e[type=marker,tag=spawner,limit=1,sort=nearest] 14 0.5 -10
+execute as @e[type=marker,tag=spawner,limit=1,sort=nearest] at @s run function nn:neuron/create_layer {layer:"hidden1"}
 
 # Hidden layer 2
-tp @e[type=marker,tag=spawner,limit=1,sort=nearest] 14 0 -20
+tp @e[type=marker,tag=spawner,limit=1,sort=nearest] 14 0.5 -20
+execute as @e[type=marker,tag=spawner,limit=1,sort=nearest] at @s run function nn:neuron/create_layer {layer:"hidden2"}
 
 # Output layer
-tp @e[type=marker,tag=spawner,limit=1,sort=nearest] 14 0 -30
+tp @e[type=marker,tag=spawner,limit=1,sort=nearest] 14 0.5 -30
+execute as @e[type=marker,tag=spawner,limit=1,sort=nearest] at @s run function nn:neuron/create_layer {layer:"output"}
 
 # Show where neurons are
 execute at @e[type=marker,tag=neuron] run particle block_marker{block_state:"barrier"} ~ ~ ~1 0 0 0 0 1 force

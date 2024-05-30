@@ -11,14 +11,14 @@ execute if score .loop1 global matches 0 run function nn:weight/create_bias with
 scoreboard players add .loop1 global 1
 
 # If inner loop hasn't been exceeded, create next weight
-$execute if score .loop1 global < .$(layer)_in global run return run function nn:weight/create_weight_loop {layer:$(layer)}
+$execute if score .loop1 global < .$(layer)_from global run return run function nn:weight/create_weight_loop {layer:$(layer)}
 
 # Otherwise, reset the inner loop counter and increment the outer loop
 scoreboard players set .loop1 global 0
 scoreboard players add .loop2 global 1
 
 # If this is the last iteration of the outer loop, return early
-$execute if score .loop2 global = .$(layer)_out global run return 0
+$execute if score .loop2 global = .$(layer)_to global run return 0
 
 # Otherwise, create next weight
 $function nn:weight/create_weight_loop {layer:$(layer)}
