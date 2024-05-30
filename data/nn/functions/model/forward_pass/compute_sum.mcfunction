@@ -6,4 +6,4 @@ scoreboard players set .loop global 0
 scoreboard players set .sum global 0
 
 # Begin sum computation
-function nn:model/pass/compute_sum_loop with storage nn:helpers
+function nn:model/forward_pass/compute_sum_loop with storage nn:helpers
