@@ -1,7 +1,7 @@
 # This function uses a hard-coded scale factor.
 
 # Formula
-$scoreboard players operation .temp global = .bar_z3_$(to) gradient
+$scoreboard players operation .temp global = .bar_$(error)_$(to) gradient
 $scoreboard players operation .temp global *= .$(prev_layer)_$(from) neuron 
 
 # Learning rate

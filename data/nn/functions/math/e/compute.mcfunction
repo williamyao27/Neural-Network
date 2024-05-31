@@ -1,13 +1,11 @@
-# This function uses hard-coded scale factors. The design of the function relies entirely on the scale factor.
+# Computes an approximation of e^var_exp and stores it in var_dest. Works for var_exp up to around e^14.55 (or in scoreboard form, e^14550)
 
-# Reset loop
-$scoreboard players operation .loop global = $(var_exp) $(obj_exp)
+# Initialize exponent loop by setting it to the given exponent
+$scoreboard players operation .exponent euler = $(var_exp) $(obj_exp)
 
-# Initialize product destination; should equal 1 = e^0
+# Initialize the destination with the value 1.000, equal to e^0
 $scoreboard players operation $(var_dest) $(obj_dest) = .scale global
 
-# Loop through increments of exponent in powers of 10
-$execute if score .loop global matches 1000.. run function nn:math/e/compute_loop {var:$(var_dest),obj:$(obj_dest),increment:1000}
-$execute if score .loop global matches 100.. run function nn:math/e/compute_loop {var:$(var_dest),obj:$(obj_dest),increment:100}
-$execute if score .loop global matches 10.. run function nn:math/e/compute_loop {var:$(var_dest),obj:$(obj_dest),increment:10}
-$execute if score .loop global matches 1.. run function nn:math/e/compute_loop {var:$(var_dest),obj:$(obj_dest),increment:1}
+# Multiply into the destination variable
+$execute if score .exponent euler matches 1.. run return run function nn:math/e/compute_positive {var:$(var_dest),obj:$(obj_dest)}
+$execute if score .exponent euler matches ..-1 run function nn:math/e/compute_negative {var:$(var_dest),obj:$(obj_dest)}
