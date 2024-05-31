@@ -9,11 +9,11 @@ function nn:model/forward_pass/add_signal with storage nn:helpers
 # Increment loop
 scoreboard players add .loop global 1
 
-# If loop hasn't been exceeded, compute next sum operand
+# If loop hasn't been exceeded, compute next sum term
 $execute if score .loop global < .$(layer)_from global run return run function nn:model/forward_pass/compute_sum_loop with storage nn:helpers
 
-# On last iteration, divide the running sum by the scale factor, then add the bias term
-scoreboard players operation .sum global /= .scale global
+# On last iteration, add the bias term, then set the neuron to the weighted sum + bias
+# scoreboard players operation .sum global /= .scale global
 $execute store result score .temp global run data get storage nn:weights $(layer)_$(to)_bias 1000
 scoreboard players operation .sum global += .temp global
 $scoreboard players operation .$(layer)_$(to) neuron = .sum global

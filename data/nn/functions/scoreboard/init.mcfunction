@@ -10,6 +10,10 @@ scoreboard objectives remove weight
 scoreboard objectives add weight dummy
 
 # Set helper variables
+scoreboard players set .e_1000 global 2718
+scoreboard players set .e_100 global 1105
+scoreboard players set .e_10 global 1010
+scoreboard players set .e_1 global 1001
 scoreboard players set .scale global 1000
 scoreboard players set .loop global 0
 scoreboard players set .loop1 global 0

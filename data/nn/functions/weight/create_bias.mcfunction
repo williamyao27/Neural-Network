@@ -1,1 +1,3 @@
-$execute store result storage nn:weights $(layer)_$(to)_bias float 0.001 run random value -1000..1000
+# Biases are initialized to 0
+
+$data merge storage nn:weights {$(layer)_$(to)_bias:0f}

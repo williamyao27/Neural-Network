@@ -7,7 +7,8 @@ $execute store result score .$(layer)_$(to)_$(from) weight run data get storage 
 $scoreboard players operation .temp global = .$(prev_layer)_$(from) neuron
 
 # Multiply by weight
-$scoreboard players operation .temp global *= .$(layer)_$(to)_$(from) weight
+$function nn:math/multiply {var1:".temp",obj1:"global",var2:".$(layer)_$(to)_$(from)",obj2:"weight"}
+# $scoreboard players operation .temp global *= .$(layer)_$(to)_$(from) weight
 
 # Add to running sum
 scoreboard players operation .sum global += .temp global
