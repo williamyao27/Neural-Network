@@ -13,7 +13,6 @@ scoreboard players add .loop global 1
 $execute if score .loop global < .$(layer)_from global run return run function nn:model/forward_pass/compute_sum_loop with storage nn:helpers
 
 # On last iteration, add the bias term, then set the neuron to the weighted sum + bias
-# scoreboard players operation .sum global /= .scale global
-$execute store result score .temp global run data get storage nn:weights $(layer)_$(to)_bias 1000
-scoreboard players operation .sum global += .temp global
+$execute store result score .$(layer)_$(to)_bias bias run data get storage nn:biases $(layer)_$(to)_bias 1000
+$scoreboard players operation .sum global += .$(layer)_$(to)_bias bias
 $scoreboard players operation .$(layer)_$(to) neuron = .sum global

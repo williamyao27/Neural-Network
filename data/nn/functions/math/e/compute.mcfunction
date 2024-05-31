@@ -1,4 +1,4 @@
-# This function contains hard-coded scale factors. The design of the function relies entirely on the scale factor.
+# This function uses hard-coded scale factors. The design of the function relies entirely on the scale factor.
 
 # Reset loop
 $scoreboard players operation .loop global = $(var_exp) $(obj_exp)

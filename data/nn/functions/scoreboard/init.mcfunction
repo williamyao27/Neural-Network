@@ -9,6 +9,15 @@ scoreboard objectives add neuron dummy
 scoreboard objectives remove weight
 scoreboard objectives add weight dummy
 
+scoreboard objectives remove bias
+scoreboard objectives add bias dummy
+
+scoreboard objectives remove target
+scoreboard objectives add target dummy
+
+scoreboard objectives remove gradient
+scoreboard objectives add gradient dummy
+
 # Set helper variables
 scoreboard players set .e_1000 global 2718
 scoreboard players set .e_100 global 1105
@@ -22,7 +31,7 @@ scoreboard players set .sum global 0
 scoreboard players set .temp global 0
 
 # Set model hyperparameters
-scoreboard players set .learning_rate global 10
+scoreboard players set .learning_rate global 100
 scoreboard players set .img_x global 28
 scoreboard players set .img_y global 28
 scoreboard players set .hidden1_from global 784

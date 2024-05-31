@@ -5,7 +5,7 @@ kill @e[type=marker,tag=neuron]
 summon marker 0 0.5 0 {Tags:["spawner"]}
 
 # Input layer
-execute as @e[type=marker,tag=spawner,limit=1,sort=nearest] at @s run function nn:neuron/create_input_layer
+execute as @e[type=marker,tag=spawner,limit=1,sort=nearest] at @s run function nn:neuron/input/create_layer
 
 # Hidden layer 1
 tp @e[type=marker,tag=spawner,limit=1,sort=nearest] 14 0.5 -10

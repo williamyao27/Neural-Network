@@ -1,1 +1,1 @@
-$scoreboard players set .target_$(j) neuron 0
+$scoreboard players set .target_$(j) target 0

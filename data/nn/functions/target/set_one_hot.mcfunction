@@ -5,4 +5,4 @@ scoreboard players set .loop global 0
 function nn:target/zero_loop
 
 # Set one-hot target to the global scale factor
-$scoreboard players operation .target_$(class) neuron = .scale global
+$scoreboard players operation .target_$(class) target = .scale global

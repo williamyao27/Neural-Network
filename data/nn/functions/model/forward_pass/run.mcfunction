@@ -11,4 +11,4 @@ function nn:math/activation/relu/layer {layer:"hidden2"}
 
 # Output layer
 function nn:model/forward_pass/layer {layer:"output",prev_layer:"hidden2"}
-function nn:math/activation/relu/layer {layer:"output"}
+function nn:math/activation/softmax/layer {layer:"output"}
