@@ -11,6 +11,9 @@ scoreboard objectives add constant dummy
 scoreboard objectives remove euler
 scoreboard objectives add euler dummy
 
+scoreboard objectives remove settings
+scoreboard objectives add settings dummy
+
 scoreboard objectives remove hyperparameter
 scoreboard objectives add hyperparameter dummy
 
@@ -32,6 +35,9 @@ scoreboard objectives add gradient dummy
 scoreboard objectives remove metric
 scoreboard objectives add metric dummy
 
+scoreboard objectives remove settings
+scoreboard objectives add settings dummy
+
 # Global variables
 scoreboard players set .scale global 1000
 scoreboard players set .create_neuron_loop global 0
@@ -50,9 +56,20 @@ scoreboard players set .backprop_parameter_loop_to global 0
 scoreboard players set .sum global 0
 scoreboard players set .temp global 0
 
+# Min/max variables
+scoreboard players set .max_loop global 0
+scoreboard players set .min_loop global 0
+scoreboard players set .argmax global -1
+scoreboard players set .max global -2147483647
+scoreboard players set .argmin global -1
+scoreboard players set .min global 2147483647
+scoreboard players set .max_min_diff global 0
+
 # Train/test metric variables
 scoreboard players set .train_iterations global 0
 scoreboard players set .train_iterations_limit global 0
+scoreboard players set .test_iterations global 0
+scoreboard players set .test_iterations_limit global 0
 
 # Constant variables
 scoreboard players set .-1 constant -1
@@ -61,6 +78,7 @@ scoreboard players set .2 constant 2
 scoreboard players set .10 constant 10
 scoreboard players set .100 constant 100
 scoreboard players set .ln2 constant 693
+scoreboard players set .max_bar_length constant 20
 
 scoreboard players set .e_+100 constant 1105
 scoreboard players set .e_+10 constant 1010

@@ -1,3 +1,5 @@
+# Loops through the target scoreboard to zero out all of the target components.
+
 # Zero the class given by the current loop index
 execute store result storage nn:helpers j int 1.0 run scoreboard players get .target_zero_loop global
 function nn:target/zero with storage nn:helpers

@@ -1,7 +1,9 @@
-# Kill all neurons
+# Initializes all neurons in the model by spawning a marker entity for each one.
+
+# Kill all existing neurons
 kill @e[type=marker,tag=neuron]
 
-# Create spawner
+# Create moving spawner marker
 summon marker 0 0.5 0 {Tags:["spawner"]}
 
 # Input layer

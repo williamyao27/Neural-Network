@@ -1,3 +1,5 @@
+# Sets the target scoreboard to a one-hot vector with the given class being the target.
+
 # Initialize loop
 scoreboard players set .target_zero_loop global 0
 

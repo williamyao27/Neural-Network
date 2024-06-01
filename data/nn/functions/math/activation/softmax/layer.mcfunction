@@ -3,6 +3,7 @@
 # Initialize sum
 scoreboard players set .sum global 0
 
+# Set all neurons to e^logit
 $data merge storage nn:helpers {layer:$(layer)}
 $execute as @e[type=marker,tag=$(layer)] run function nn:math/activation/softmax/neuron_exp
 

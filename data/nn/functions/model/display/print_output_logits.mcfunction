@@ -1,9 +1,10 @@
-# Prints the output of the model's final layer and summarizes its prediction.
-
+# Prints the pre-activation output of the model's final layer.
 # Note that this function is hard-coded to the MNIST problem, i.e. whereas other functions in this datapack
 # can adapt to different numbers of neurons in the output layer, the printed summary assumes a 10-digit classification problem.
 
-tellraw @a [{"text":"======================"}]
+tellraw @a [{"text":""}]
+tellraw @a [{"text":"===== REPORT =====","bold":true}]
+tellraw @a [{"text":"Output logits:","color":"yellow"}]
 tellraw @a [{"text":"0: ","color":"gold"},{"score":{"name":".output_0","objective":"neuron"},"color":"white"}]
 tellraw @a [{"text":"1: ","color":"gold"},{"score":{"name":".output_1","objective":"neuron"},"color":"white"}]
 tellraw @a [{"text":"2: ","color":"gold"},{"score":{"name":".output_2","objective":"neuron"},"color":"white"}]

@@ -1,3 +1,4 @@
 {
-  "workbench.iconTheme": "mc-dp-icons"
+  "workbench.iconTheme": "mc-dp-icons",
+  "git.ignoreLimitWarning": true
 }
