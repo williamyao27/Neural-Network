@@ -1,20 +1,15 @@
 # Performs stochastic gradient descent using a randomly sampled training exampled.
-# This function is run on every tick but does nothing if there are no training iterations left.
+# This function is run on every tick but does nothing if there are no loader markers left.
 
-scoreboard players set .train_iterations_limit global 0
+# Cancel training if no markers are left
+execute unless entity @e[type=marker,tag=loader,limit=1] run return fail
 
-# Cancel training if no iterations are left
-execute if score .train_iterations global >= .train_iterations_limit global run return fail
-
-# Sample (with replacement) a random example image from the dataset for this iteration
-execute store result storage nn:helpers example_class int 1.0 run random value 0..9
-execute store result storage nn:helpers example_index int 1.0 run random value 0..999
-
-# Load selected example
-function nn:train/load with storage nn:helpers
+# Sample (without replacement) the example image associated with a random loader for this iteration
+execute as @e[type=marker,tag=loader,limit=1,sort=random] run function nn:train/loader/load with entity @s data
 
 # Run backprop
 function nn:model/backprop/run
 
-# Increment elapsed testing iterations
-scoreboard players add .train_iterations global 1
+# Increment elapsed iterations
+scoreboard players add .total_iterations train 1
+scoreboard players add .iterations_this_epoch train 1

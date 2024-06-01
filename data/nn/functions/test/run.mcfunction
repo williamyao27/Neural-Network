@@ -1,6 +1,8 @@
 # Runs a forward pass on a randomly sampled test point.
 # This function is run on every tick but does nothing if there are no testing iterations left.
 
+return fail
+
 # Cancel testing if no iterations are left
 execute if score .test_iterations global >= .test_iterations_limit global run return fail
 

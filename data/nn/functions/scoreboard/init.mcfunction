@@ -3,16 +3,12 @@
 # Create objectives
 scoreboard objectives remove global
 scoreboard objectives add global dummy
-scoreboard objectives setdisplay sidebar global
 
 scoreboard objectives remove constant
 scoreboard objectives add constant dummy
 
 scoreboard objectives remove euler
 scoreboard objectives add euler dummy
-
-scoreboard objectives remove settings
-scoreboard objectives add settings dummy
 
 scoreboard objectives remove hyperparameter
 scoreboard objectives add hyperparameter dummy
@@ -32,8 +28,15 @@ scoreboard objectives add target dummy
 scoreboard objectives remove gradient
 scoreboard objectives add gradient dummy
 
+scoreboard objectives remove dataset
+scoreboard objectives add dataset dummy
+
+scoreboard objectives remove train
+scoreboard objectives add train dummy [{"text":"Training","color":"yellow","bold":true}]
+scoreboard objectives setdisplay sidebar train
+
 scoreboard objectives remove metric
-scoreboard objectives add metric dummy
+scoreboard objectives add metric dummy [{"text":"Metrics","color":"yellow","bold":true}]
 
 scoreboard objectives remove settings
 scoreboard objectives add settings dummy
@@ -45,10 +48,8 @@ scoreboard players set .create_neuron_loop_y global 0
 scoreboard players set .input_neuron_j global 0
 scoreboard players set .create_parameter_loop_from global 0
 scoreboard players set .create_parameter_loop_to global 0
-scoreboard players set .load_parameter_loop_from global 0
-scoreboard players set .load_parameter_loop_to global 0
-scoreboard players set .save_parameter_loop_from global 0
-scoreboard players set .save_parameter_loop_to global 0
+scoreboard players set .create_loader_class_loop global 0
+scoreboard players set .create_loader_index_loop global 0
 scoreboard players set .forward_pass_sum_loop_from global 0
 scoreboard players set .target_zero_loop global 0
 scoreboard players set .backprop_parameter_loop_from global 0
@@ -64,12 +65,6 @@ scoreboard players set .max global -2147483647
 scoreboard players set .argmin global -1
 scoreboard players set .min global 2147483647
 scoreboard players set .max_min_diff global 0
-
-# Train/test metric variables
-scoreboard players set .train_iterations global 0
-scoreboard players set .train_iterations_limit global 0
-scoreboard players set .test_iterations global 0
-scoreboard players set .test_iterations_limit global 0
 
 # Constant variables
 scoreboard players set .-1 constant -1
@@ -95,6 +90,14 @@ scoreboard players set .factors_100 euler 0
 scoreboard players set .factors_10 euler 0
 scoreboard players set .factors_1 euler 0
 scoreboard players set .deduct euler 0
+
+# Dataset variables
+function nn:scoreboard/set_dataset_parameters
+
+# Training variables
+scoreboard players set .total_iterations train 0
+scoreboard players set .iterations_this_epoch train 0
+scoreboard players set .epochs train 0
 
 # Model hyperparameters
 function nn:scoreboard/set_hyperparameters
