@@ -1,3 +1,5 @@
+# Runs the backprop algorithm through the entire model.
+
 # Run forward pass
 function nn:model/forward_pass/run
 

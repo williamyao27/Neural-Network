@@ -1,3 +1,5 @@
+# Initializes all scoreboard objectives and variables, including model hyperparameters but excluding model parameters.
+
 # Create objectives
 scoreboard objectives remove global
 scoreboard objectives add global dummy
@@ -8,6 +10,9 @@ scoreboard objectives add constant dummy
 
 scoreboard objectives remove euler
 scoreboard objectives add euler dummy
+
+scoreboard objectives remove hyperparameter
+scoreboard objectives add hyperparameter dummy
 
 scoreboard objectives remove neuron
 scoreboard objectives add neuron dummy
@@ -23,6 +28,9 @@ scoreboard objectives add target dummy
 
 scoreboard objectives remove gradient
 scoreboard objectives add gradient dummy
+
+scoreboard objectives remove metric
+scoreboard objectives add metric dummy
 
 # Global variables
 scoreboard players set .scale global 1000
@@ -42,8 +50,9 @@ scoreboard players set .backprop_parameter_loop_to global 0
 scoreboard players set .sum global 0
 scoreboard players set .temp global 0
 
-# Training variables
+# Train/test metric variables
 scoreboard players set .train_iterations global 0
+scoreboard players set .train_iterations_limit global 0
 
 # Constant variables
 scoreboard players set .-1 constant -1
@@ -70,12 +79,4 @@ scoreboard players set .factors_1 euler 0
 scoreboard players set .deduct euler 0
 
 # Model hyperparameters
-scoreboard players set .learning_rate global 100
-scoreboard players set .img_x global 28
-scoreboard players set .img_y global 28
-scoreboard players set .hidden1_from global 784
-scoreboard players set .hidden1_to global 128
-scoreboard players set .hidden2_from global 128
-scoreboard players set .hidden2_to global 64
-scoreboard players set .output_from global 64
-scoreboard players set .output_to global 10
+function nn:scoreboard/set_hyperparameters

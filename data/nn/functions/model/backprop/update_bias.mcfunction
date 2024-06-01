@@ -4,7 +4,7 @@
 $scoreboard players operation .temp global = .bar_$(layer)_$(to) gradient
 
 # Learning rate
-function nn:math/multiply {var1:".temp",obj1:"global",var2:".learning_rate",obj2:"global"}
+function nn:math/multiply {var1:".temp",obj1:"global",var2:".learning_rate",obj2:"hyperparameter"}
 
 # Update bias in scoreboard
 $scoreboard players operation .$(layer)_$(to) bias -= .temp global
