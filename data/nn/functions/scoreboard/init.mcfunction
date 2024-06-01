@@ -26,11 +26,24 @@ scoreboard objectives add gradient dummy
 
 # Global variables
 scoreboard players set .scale global 1000
-scoreboard players set .loop global 0
-scoreboard players set .loop1 global 0
-scoreboard players set .loop2 global 0
+scoreboard players set .create_neuron_loop global 0
+scoreboard players set .create_neuron_loop_y global 0
+scoreboard players set .input_neuron_j global 0
+scoreboard players set .create_parameter_loop_from global 0
+scoreboard players set .create_parameter_loop_to global 0
+scoreboard players set .load_parameter_loop_from global 0
+scoreboard players set .load_parameter_loop_to global 0
+scoreboard players set .save_parameter_loop_from global 0
+scoreboard players set .save_parameter_loop_to global 0
+scoreboard players set .forward_pass_sum_loop_from global 0
+scoreboard players set .target_zero_loop global 0
+scoreboard players set .backprop_parameter_loop_from global 0
+scoreboard players set .backprop_parameter_loop_to global 0
 scoreboard players set .sum global 0
 scoreboard players set .temp global 0
+
+# Training variables
+scoreboard players set .train_iterations global 0
 
 # Constant variables
 scoreboard players set .-1 constant -1
@@ -57,12 +70,12 @@ scoreboard players set .factors_1 euler 0
 scoreboard players set .deduct euler 0
 
 # Model hyperparameters
-scoreboard players set .learning_rate global 50
+scoreboard players set .learning_rate global 100
 scoreboard players set .img_x global 28
 scoreboard players set .img_y global 28
 scoreboard players set .hidden1_from global 784
-scoreboard players set .hidden1_to global 32
-scoreboard players set .hidden2_from global 32
-scoreboard players set .hidden2_to global 16
-scoreboard players set .output_from global 16
+scoreboard players set .hidden1_to global 128
+scoreboard players set .hidden2_from global 128
+scoreboard players set .hidden2_to global 64
+scoreboard players set .output_from global 64
 scoreboard players set .output_to global 10

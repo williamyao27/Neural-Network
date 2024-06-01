@@ -1,5 +1,5 @@
 # Initialize loop
-scoreboard players set .loop global 0
+scoreboard players set .target_zero_loop global 0
 
 # Initiate target setting loop
 function nn:target/zero_loop

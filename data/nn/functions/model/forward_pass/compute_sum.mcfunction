@@ -2,7 +2,7 @@
 execute store result storage nn:helpers to int 1.0 run data get entity @s data.j
 
 # Initialize loop and sum
-scoreboard players set .loop global 0
+scoreboard players set .forward_pass_sum_loop_from global 0
 scoreboard players set .sum global 0
 
 # Begin sum computation
