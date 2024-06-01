@@ -31,4 +31,4 @@ function nn:math/activation/normalize/layer {layer:"output"}
 
 # Display output
 function nn:model/display/print_prediction
-function nn:model/display/build_bars
+function nn:model/display/bar_graph/build

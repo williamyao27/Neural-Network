@@ -7,4 +7,4 @@ function nn:neuron/create with storage nn:helpers
 scoreboard players add .create_neuron_loop global 1
 
 # If loop hasn't been exceeded, move self in y-direction
-$execute if score .create_neuron_loop global < .$(layer)_to global positioned ~ ~1 ~ run function nn:neuron/create_loop {layer:$(layer)}
+$execute if score .create_neuron_loop global < .$(layer)_to hyperparameter positioned ~ ~1 ~ run function nn:neuron/create_loop {layer:$(layer)}

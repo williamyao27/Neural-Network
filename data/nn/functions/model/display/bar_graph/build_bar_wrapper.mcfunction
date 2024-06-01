@@ -4,4 +4,4 @@
 $execute store result storage nn:helpers bar_length int 1.0 run scoreboard players get .$(layer)_$(j) neuron
 
 # Build bar
-function nn:model/display/build_bar with storage nn:helpers
+function nn:model/display/bar_graph/build_bar with storage nn:helpers
