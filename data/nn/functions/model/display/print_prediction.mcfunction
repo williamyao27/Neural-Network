@@ -3,3 +3,4 @@
 
 tellraw @a [{"text":""}]
 tellraw @a [{"text":"Prediction: "},{"score":{"name":".argmax","objective":"global"},"color":"gold","bold":true}]
+tellraw @a [{"text":"Truth: "},{"score":{"name":".targ","objective":"global"},"color":"gold","bold":true}]

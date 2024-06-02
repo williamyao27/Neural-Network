@@ -10,6 +10,9 @@ execute as @e[type=marker,tag=loader,limit=1,sort=random] run function nn:train/
 # Run backprop
 function nn:model/backprop/run
 
+# Evaluate the model's prediction
+function nn:evaluation/run with storage nn:helpers
+
 # Increment elapsed iterations
 scoreboard players add .total_iterations train 1
 scoreboard players add .iterations_this_epoch train 1

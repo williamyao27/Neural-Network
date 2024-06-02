@@ -33,10 +33,10 @@ scoreboard objectives add dataset dummy
 
 scoreboard objectives remove train
 scoreboard objectives add train dummy [{"text":"Training","color":"yellow","bold":true}]
-scoreboard objectives setdisplay sidebar train
 
 scoreboard objectives remove metric
 scoreboard objectives add metric dummy [{"text":"Metrics","color":"yellow","bold":true}]
+scoreboard objectives setdisplay sidebar metric
 
 scoreboard objectives remove settings
 scoreboard objectives add settings dummy
@@ -57,7 +57,7 @@ scoreboard players set .backprop_parameter_loop_to global 0
 scoreboard players set .sum global 0
 scoreboard players set .temp global 0
 
-# Min/max variables
+# Min/max/target variables
 scoreboard players set .max_loop global 0
 scoreboard players set .min_loop global 0
 scoreboard players set .argmax global -1
@@ -65,11 +65,13 @@ scoreboard players set .max global -2147483647
 scoreboard players set .argmin global -1
 scoreboard players set .min global 2147483647
 scoreboard players set .max_min_diff global 0
+scoreboard players set .targ global -1
 
 # Constant variables
 scoreboard players set .-1 constant -1
 scoreboard players set .1 constant 1
 scoreboard players set .2 constant 2
+scoreboard players set .5 constant 5
 scoreboard players set .10 constant 10
 scoreboard players set .100 constant 100
 scoreboard players set .ln2 constant 693
@@ -99,8 +101,15 @@ scoreboard players set .total_iterations train 0
 scoreboard players set .iterations_this_epoch train 0
 scoreboard players set .epochs train 0
 
+# Metric variables
+scoreboard players set .predictions_this_report metric 0
+scoreboard players set .predictions_per_report metric 100
+scoreboard players set .report metric 0
+
+# Testing variables
+
 # Model hyperparameters
 function nn:scoreboard/set_hyperparameters
 
 # Settings
-scoreboard players set .visualize settings 0
+scoreboard players set .visualize settings 1

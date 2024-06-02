@@ -1,4 +1,4 @@
-function nn:target/set_one_hot {class:0}
+function nn:target/set {class:0}
 fill ~ ~ ~ ~27 ~27 ~ black_concrete
 setblock ~16 ~23 ~ white_concrete
 setblock ~17 ~23 ~ white_concrete

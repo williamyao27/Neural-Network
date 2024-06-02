@@ -8,3 +8,7 @@ function nn:target/zero_loop
 
 # Set one-hot target to the global scale factor
 $scoreboard players operation .target_$(class) target = .scale global
+
+# Save the target class index for metric reporting
+$scoreboard players set .targ global $(class)
+$data merge storage nn:helpers {target:$(class)}
