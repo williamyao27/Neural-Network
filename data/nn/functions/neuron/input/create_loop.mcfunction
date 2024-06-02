@@ -19,5 +19,5 @@ scoreboard players add .create_neuron_loop_y global 1
 # If this is the last iteration of the outer loop, return early
 execute if score .create_neuron_loop_y global = .img_y hyperparameter run return 0
 
-# Otherwise, move self in y-direction
+# Otherwise, move self in y-direction and repeat
 execute positioned 0 ~1 ~ run function nn:neuron/input/create_loop

@@ -1,5 +1,8 @@
 # Runs forward pass in the model.
 
+# Remove neuron displays
+function nn:model/display/neuron/remove_all
+
 # Input layer
 function nn:model/input/process_image
 

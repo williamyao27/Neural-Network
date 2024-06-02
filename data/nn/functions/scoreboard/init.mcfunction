@@ -101,3 +101,6 @@ scoreboard players set .epochs train 0
 
 # Model hyperparameters
 function nn:scoreboard/set_hyperparameters
+
+# Settings
+scoreboard players set .visualize settings 0
