@@ -8,4 +8,4 @@ function nn:target/zero with storage nn:helpers
 scoreboard players add .target_zero_loop global 1
 
 # If loop hasn't been exceeded, keep zeroing labels
-execute if score .target_zero_loop global < .output_to global run function nn:target/zero_loop
+execute if score .target_zero_loop global < .output_to hyperparameter run function nn:target/zero_loop

@@ -73,6 +73,7 @@ scoreboard players set .1 constant 1
 scoreboard players set .2 constant 2
 scoreboard players set .5 constant 5
 scoreboard players set .10 constant 10
+scoreboard players set .50 constant 50
 scoreboard players set .100 constant 100
 scoreboard players set .ln2 constant 693
 scoreboard players set .max_bar_length constant 20

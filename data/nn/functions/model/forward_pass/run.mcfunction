@@ -29,8 +29,9 @@ function nn:model/display/print_output_logits
 # Note that normalization is done purely to build the visual bar graphs so that the smallest and largest bars
 # have fixed lengths. Normalization itself is not necessary to select the model's prediction because the argmax
 # of the raw logits will remain the argmax of the normalized (or softmaxed, for that matter) logits.
-function nn:math/activation/normalize/layer {layer:"output"}
-# function nn:math/activation/softmax/layer {layer:"output"}
+# function nn:math/activation/normalize/layer {layer:"output"}
+function nn:math/max/run {layer:"output"}
+function nn:math/activation/softmax/layer {layer:"output"}
 
 # Display output
 function nn:model/display/print_prediction

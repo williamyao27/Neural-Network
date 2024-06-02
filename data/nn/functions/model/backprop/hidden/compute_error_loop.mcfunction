@@ -10,7 +10,7 @@ function nn:model/backprop/hidden/add_error with storage nn:helpers
 scoreboard players add .backprop_sum_loop_to global 1
 
 # If loop hasn't been exceeded, compute next sum term
-$execute if score .backprop_sum_loop_to global < .$(next_layer)_to global run return run function nn:model/backprop/hidden/compute_error_loop with storage nn:helpers
+$execute if score .backprop_sum_loop_to global < .$(next_layer)_to hyperparameter run return run function nn:model/backprop/hidden/compute_error_loop with storage nn:helpers
 
 # On last iteration, set the gradient to the sum and ReLU it
 $scoreboard players operation .bar_$(layer)_$(from) gradient = .sum global
