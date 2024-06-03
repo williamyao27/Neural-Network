@@ -9,7 +9,7 @@ execute if score .backprop_parameter_loop_from global matches 0 run function nn:
 # Increment inner loop
 scoreboard players add .backprop_parameter_loop_from global 1
 
-# If inner loop hasn't been exceeded, create next weight
+# If inner loop hasn't been exceeded, update next parameter(s)
 $execute if score .backprop_parameter_loop_from global < .$(layer)_from hyperparameter run return run function nn:model/backprop/update_parameters_loop with storage nn:helpers
 
 # Otherwise, reset the inner loop counter and increment the outer loop
@@ -19,5 +19,5 @@ scoreboard players add .backprop_parameter_loop_to global 1
 # If this is the last iteration of the outer loop, return early
 $execute if score .backprop_parameter_loop_to global = .$(layer)_to hyperparameter run return 0
 
-# Otherwise, create next weight
+# Otherwise, update next parameter(s)
 function nn:model/backprop/update_parameters_loop with storage nn:helpers

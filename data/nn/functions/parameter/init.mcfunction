@@ -4,7 +4,7 @@
 function nn:parameter/create_layer {layer:"hidden1"}
 
 # Hidden layer 2 weights
-function nn:parameter/create_layer {layer:"hidden2"}
+# function nn:parameter/create_layer {layer:"hidden2"}
 
 # Output layer weights
 function nn:parameter/create_layer {layer:"output"}

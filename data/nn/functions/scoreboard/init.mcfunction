@@ -56,6 +56,7 @@ scoreboard players set .backprop_parameter_loop_from global 0
 scoreboard players set .backprop_parameter_loop_to global 0
 scoreboard players set .sum global 0
 scoreboard players set .temp global 0
+scoreboard players set .regularization global 0
 
 # Min/max/target variables
 scoreboard players set .max_loop global 0
@@ -113,4 +114,4 @@ scoreboard players set .report metric 0
 function nn:scoreboard/set_hyperparameters
 
 # Settings
-scoreboard players set .visualize settings 1
+scoreboard players set .visualize settings 0
