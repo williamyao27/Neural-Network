@@ -1,0 +1,1 @@
+$scoreboard players operation .bias_$(layer)_$(to) gradient += .$(layer)_$(to) gradient

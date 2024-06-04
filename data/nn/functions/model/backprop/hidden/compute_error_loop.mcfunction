@@ -12,4 +12,4 @@ $execute if score .backprop_sum_loop_to global < .$(next_layer)_to hyperparamete
 
 # On last iteration, ReLU the sum and add it to the batch gradient
 $execute unless score .$(layer)_$(from) neuron matches 0.. run scoreboard players set .sum global 0
-$scoreboard players operation .bar_$(layer)_$(from)_$(batch_index) gradient = .sum global
+$scoreboard players operation .$(layer)_$(from) gradient = .sum global
