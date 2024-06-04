@@ -3,5 +3,5 @@
 
 $execute if score .min global matches 1.. run scoreboard players operation .$(layer)_$(to) neuron -= .min global
 
-# Also remove a constant amount from the exponent
-$scoreboard players remove .$(layer)_$(to) neuron 5000
+# Also remove a constant amount from the exponent; in practice, the logits tend to explode
+$scoreboard players remove .$(layer)_$(to) neuron 1000

@@ -4,6 +4,8 @@
 $scoreboard players operation .temp global = .bar_$(layer)_$(to) gradient
 $function nn:math/multiply {var1:".temp",obj1:"global",var2:".$(prev_layer)_$(from)",obj2:"neuron"}
 
+# $tellraw @a [{"text":"$(layer)_$(to)_$(from): "},{"score":{"name":".temp","objective":"global"},"color":"gold","bold":true}]
+
 # Learning rate
 function nn:math/multiply {var1:".temp",obj1:"global",var2:".learning_rate",obj2:"hyperparameter"}
 

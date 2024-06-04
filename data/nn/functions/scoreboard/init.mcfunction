@@ -54,6 +54,7 @@ scoreboard players set .forward_pass_sum_loop_from global 0
 scoreboard players set .target_zero_loop global 0
 scoreboard players set .backprop_parameter_loop_from global 0
 scoreboard players set .backprop_parameter_loop_to global 0
+scoreboard players set .average_error_loop global 0
 scoreboard players set .sum global 0
 scoreboard players set .temp global 0
 scoreboard players set .regularization global 0
@@ -102,6 +103,7 @@ function nn:scoreboard/set_dataset_parameters
 scoreboard players set .total_iterations train 0
 scoreboard players set .iterations_this_epoch train 0
 scoreboard players set .epochs train 0
+scoreboard players set .batch_loop train 0
 
 # Metric variables
 scoreboard players set .predictions_this_report metric 0
