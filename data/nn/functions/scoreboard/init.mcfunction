@@ -1,5 +1,7 @@
 # Initializes all scoreboard objectives and variables, including model hyperparameters but excluding model parameters.
 
+# This function uses a hard-coded scale factor.
+
 # Create objectives
 scoreboard objectives remove global
 scoreboard objectives add global dummy
@@ -7,8 +9,8 @@ scoreboard objectives add global dummy
 scoreboard objectives remove constant
 scoreboard objectives add constant dummy
 
-scoreboard objectives remove euler
-scoreboard objectives add euler dummy
+scoreboard objectives remove math
+scoreboard objectives add math dummy
 
 scoreboard objectives remove hyperparameter
 scoreboard objectives add hyperparameter dummy
@@ -42,7 +44,8 @@ scoreboard objectives remove settings
 scoreboard objectives add settings dummy
 
 # Global variables
-scoreboard players set .scale global 1000
+scoreboard players set .scale global 10000
+scoreboard players set .scale_neg global -10000
 scoreboard players set .create_neuron_loop global 0
 scoreboard players set .create_neuron_loop_y global 0
 scoreboard players set .input_neuron_j global 0
@@ -56,8 +59,9 @@ scoreboard players set .backprop_parameter_loop_from global 0
 scoreboard players set .backprop_parameter_loop_to global 0
 scoreboard players set .average_error_loop global 0
 scoreboard players set .sum global 0
+scoreboard players set .sum_frac global 0
 scoreboard players set .temp global 0
-scoreboard players set .regularization global 0
+scoreboard players set .temp2 global 0
 
 # Min/max/target variables
 scoreboard players set .max_loop global 0
@@ -87,14 +91,16 @@ scoreboard players set .e_-100 constant 905
 scoreboard players set .e_-10 constant 990
 scoreboard players set .e_-1 constant 999
 
-# Euler helper variables
-scoreboard players set .exponent euler 0
-scoreboard players set .double euler 0
-scoreboard players set .halve euler 0
-scoreboard players set .factors_100 euler 0
-scoreboard players set .factors_10 euler 0
-scoreboard players set .factors_1 euler 0
-scoreboard players set .deduct euler 0
+# Math helper variables
+scoreboard players set .multiply math 0
+scoreboard players set .multiply_frac math 0
+scoreboard players set .exponent math 0
+scoreboard players set .double math 0
+scoreboard players set .halve math 0
+scoreboard players set .factors_100 math 0
+scoreboard players set .factors_10 math 0
+scoreboard players set .factors_1 math 0
+scoreboard players set .deduct math 0
 
 # Dataset variables
 function nn:scoreboard/set_dataset_parameters

@@ -31,4 +31,4 @@ function nn:math/activation/softmax/layer {layer:"output"}
 
 # Display output
 function nn:model/display/print_prediction
-function nn:model/display/bar_graph/build
+# function nn:model/display/bar_graph/build

@@ -1,35 +1,104 @@
-# Calls all other initialization functions.
+scoreboard players set .a global 1
+scoreboard players set .a_frac global 5000
+scoreboard players set .b global 1
+scoreboard players set .b_frac global 5000
+function nn:math/multiply {var1:".a",obj1:"global",var2:".b",obj2:"global"}
+tellraw @a [{"text":"2.25 / "},{"score":{"name":".a","objective":"global"},"color":"gold","bold":true},{"text":" "},{"score":{"name":".a_frac","objective":"global"},"color":"gold","bold":true}]
 
-# Inits
-function nn:world/init
-function nn:board/init
-function nn:scoreboard/init
+scoreboard players set .a global 1
+scoreboard players set .a_frac global 5000
+scoreboard players set .b global -1
+scoreboard players set .b_frac global -5000
+function nn:math/multiply {var1:".a",obj1:"global",var2:".b",obj2:"global"}
+tellraw @a [{"text":"-2.25 / "},{"score":{"name":".a","objective":"global"},"color":"gold","bold":true},{"text":" "},{"score":{"name":".a_frac","objective":"global"},"color":"gold","bold":true}]
 
-# Cleanup
-function nn:model/display/bar_graph/erase_wrapper
-function nn:evaluation/bar_graph/erase_wrapper
-kill @e[type=marker,tag=loader]
+scoreboard players set .a global 1
+scoreboard players set .a_frac global 5000
+scoreboard players set .b global 0
+scoreboard players set .b_frac global -2000
+function nn:math/multiply {var1:".a",obj1:"global",var2:".b",obj2:"global"}
+tellraw @a [{"text":"-0.3 / "},{"score":{"name":".a","objective":"global"},"color":"gold","bold":true},{"text":" "},{"score":{"name":".a_frac","objective":"global"},"color":"gold","bold":true}]
 
-tellraw @a [{"text":"Neural network successfully initialized.","color":"green"}]
+scoreboard players set .a global 15
+scoreboard players set .a_frac global 8000
+scoreboard players set .b global 4
+scoreboard players set .b_frac global 9000
+function nn:math/multiply {var1:".a",obj1:"global",var2:".b",obj2:"global"}
+tellraw @a [{"text":"77.42 / "},{"score":{"name":".a","objective":"global"},"color":"gold","bold":true},{"text":" "},{"score":{"name":".a_frac","objective":"global"},"color":"gold","bold":true}]
 
-# TEST
-scoreboard players set .learning_rate hyperparameter 100
-scoreboard players set .batch_size hyperparameter 1
-scoreboard players set .img_x hyperparameter 2
-scoreboard players set .img_y hyperparameter 2
-scoreboard players set .hidden1_from hyperparameter 2
-scoreboard players set .hidden1_to hyperparameter 2
-scoreboard players set .hidden1_init hyperparameter 0
-scoreboard players set .output_from hyperparameter 2
-scoreboard players set .output_to hyperparameter 2
-scoreboard players set .output_init hyperparameter 0
+scoreboard players set .a global -15
+scoreboard players set .a_frac global -8000
+scoreboard players set .b global -4
+scoreboard players set .b_frac global -9000
+function nn:math/multiply {var1:".a",obj1:"global",var2:".b",obj2:"global"}
+tellraw @a [{"text":"77.42 / "},{"score":{"name":".a","objective":"global"},"color":"gold","bold":true},{"text":" "},{"score":{"name":".a_frac","objective":"global"},"color":"gold","bold":true}]
 
-# Create test network
-schedule function nn:neuron/init 10t
-schedule function nn:parameter/init 20t
+scoreboard players set .a global 1
+scoreboard players set .a_frac global 5000
+scoreboard players set .b global 1
+scoreboard players set .b_frac global 5000
+function nn:math/add {var1:".a",obj1:"global",var2:".b",obj2:"global"}
+tellraw @a [{"text":"3 / "},{"score":{"name":".a","objective":"global"},"color":"gold","bold":true},{"text":" "},{"score":{"name":".a_frac","objective":"global"},"color":"gold","bold":true}]
 
-function nn:target/set {class:0}
-setblock 0 0 0 air
-function nn:model/backprop/run
+scoreboard players set .a global 1
+scoreboard players set .a_frac global 9000
+scoreboard players set .b global 1
+scoreboard players set .b_frac global 9000
+function nn:math/add {var1:".a",obj1:"global",var2:".b",obj2:"global"}
+tellraw @a [{"text":"3.8 / "},{"score":{"name":".a","objective":"global"},"color":"gold","bold":true},{"text":" "},{"score":{"name":".a_frac","objective":"global"},"color":"gold","bold":true}]
 
-execute unless score .output_0_0 weight matches 0 run say error
+scoreboard players set .a global 0
+scoreboard players set .a_frac global 1000
+scoreboard players set .b global 0
+scoreboard players set .b_frac global -2000
+function nn:math/add {var1:".a",obj1:"global",var2:".b",obj2:"global"}
+tellraw @a [{"text":"-0.1 / "},{"score":{"name":".a","objective":"global"},"color":"gold","bold":true},{"text":" "},{"score":{"name":".a_frac","objective":"global"},"color":"gold","bold":true}]
+
+scoreboard players set .a global 1
+scoreboard players set .a_frac global 1000
+scoreboard players set .b global 0
+scoreboard players set .b_frac global -2000
+function nn:math/add {var1:".a",obj1:"global",var2:".b",obj2:"global"}
+tellraw @a [{"text":"0.9 / "},{"score":{"name":".a","objective":"global"},"color":"gold","bold":true},{"text":" "},{"score":{"name":".a_frac","objective":"global"},"color":"gold","bold":true}]
+
+scoreboard players set .a global -1
+scoreboard players set .a_frac global 0
+scoreboard players set .b global 0
+scoreboard players set .b_frac global 2000
+function nn:math/add {var1:".a",obj1:"global",var2:".b",obj2:"global"}
+tellraw @a [{"text":"-0.8 / "},{"score":{"name":".a","objective":"global"},"color":"gold","bold":true},{"text":" "},{"score":{"name":".a_frac","objective":"global"},"color":"gold","bold":true}]
+
+scoreboard players set .a global 1
+scoreboard players set .a_frac global 5000
+scoreboard players set .b global 1
+scoreboard players set .b_frac global 5000
+function nn:math/subtract {var1:".a",obj1:"global",var2:".b",obj2:"global"}
+tellraw @a [{"text":"0 / "},{"score":{"name":".a","objective":"global"},"color":"gold","bold":true},{"text":" "},{"score":{"name":".a_frac","objective":"global"},"color":"gold","bold":true}]
+
+scoreboard players set .a global 0
+scoreboard players set .a_frac global 1000
+scoreboard players set .b global 0
+scoreboard players set .b_frac global -2000
+function nn:math/subtract {var1:".a",obj1:"global",var2:".b",obj2:"global"}
+tellraw @a [{"text":"0.3 / "},{"score":{"name":".a","objective":"global"},"color":"gold","bold":true},{"text":" "},{"score":{"name":".a_frac","objective":"global"},"color":"gold","bold":true}]
+
+scoreboard players set .a global 0
+scoreboard players set .a_frac global -1000
+scoreboard players set .b global 0
+scoreboard players set .b_frac global -2000
+function nn:math/subtract {var1:".a",obj1:"global",var2:".b",obj2:"global"}
+tellraw @a [{"text":"0.1 / "},{"score":{"name":".a","objective":"global"},"color":"gold","bold":true},{"text":" "},{"score":{"name":".a_frac","objective":"global"},"color":"gold","bold":true}]
+
+scoreboard players set .a global -1
+scoreboard players set .a_frac global 0
+scoreboard players set .b global 0
+scoreboard players set .b_frac global 2000
+function nn:math/subtract {var1:".a",obj1:"global",var2:".b",obj2:"global"}
+tellraw @a [{"text":"-1.2 / "},{"score":{"name":".a","objective":"global"},"color":"gold","bold":true},{"text":" "},{"score":{"name":".a_frac","objective":"global"},"color":"gold","bold":true}]
+
+scoreboard players set .a global -2
+scoreboard players set .a_frac global -4839
+scoreboard players set .b global 3
+scoreboard players set .b_frac global 6671
+function nn:math/multiply {var1:".a",obj1:"global",var2:".b",obj2:"global"}
+tellraw @a [{"text":"-9.1088 / "},{"score":{"name":".a","objective":"global"},"color":"gold","bold":true},{"text":" "},{"score":{"name":".a_frac","objective":"global"},"color":"gold","bold":true}]

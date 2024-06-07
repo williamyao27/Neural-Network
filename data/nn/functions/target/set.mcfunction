@@ -7,8 +7,8 @@ scoreboard players set .target_zero_loop global 0
 function nn:target/zero_loop
 
 # Set one-hot target to the global scale factor
-$scoreboard players operation .target_$(class) target = .scale global
+$scoreboard players set .target_$(class) target 1
 
-# Save the target class index for metric reporting
+# Save the target class index for metric reporting; need to check equality of largest logit and target index
 $scoreboard players set .targ global $(class)
 $data merge storage nn:helpers {target:$(class)}

@@ -11,8 +11,8 @@ scoreboard players add .forward_pass_sum_loop_from global 1
 $execute if score .forward_pass_sum_loop_from global < .$(layer)_from hyperparameter run return run function nn:model/forward_pass/compute_sum_loop with storage nn:helpers
 
 # On last iteration, add the bias term, then set the neuron to the weighted sum + bias
-$scoreboard players operation .sum global += .$(layer)_$(to) bias
-$scoreboard players operation .$(layer)_$(to) neuron = .sum global
+$function nn:math/add {var1:".sum",obj1:"global",var2:".$(layer)_$(to)",obj2:"bias"}
+$function nn:math/equal {var1:".$(layer)_$(to)",obj1:"neuron",var2:".sum",obj2:"global"}
 
 # Display neuron value with armor stand
 execute if score .visualize settings matches 1 run function nn:model/display/neuron/spawn_wrapper
