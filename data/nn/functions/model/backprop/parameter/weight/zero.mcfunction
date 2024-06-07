@@ -1,1 +1,1 @@
-$scoreboard players set .bias_$(layer)_$(to) gradient 0
+$scoreboard players set .weight_$(layer)_$(to)_$(from) gradient 0
