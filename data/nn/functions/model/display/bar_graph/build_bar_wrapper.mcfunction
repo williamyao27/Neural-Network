@@ -2,7 +2,7 @@
 
 # Store bar length
 $scoreboard players operation .temp global = .$(layer)_$(j) neuron
-scoreboard players operation .temp global /= .50 constant
+scoreboard players operation .temp global /= .bar_scale_divisor constant
 execute store result storage nn:helpers bar_length int 1.0 run scoreboard players get .temp global
 
 # Build bar

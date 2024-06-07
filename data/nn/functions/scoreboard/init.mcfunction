@@ -42,7 +42,7 @@ scoreboard objectives remove settings
 scoreboard objectives add settings dummy
 
 # Global variables
-scoreboard players set .scale global 1000
+scoreboard players set .scale global 10000
 scoreboard players set .create_neuron_loop global 0
 scoreboard players set .create_neuron_loop_y global 0
 scoreboard players set .input_neuron_j global 0
@@ -75,17 +75,20 @@ scoreboard players set .1 constant 1
 scoreboard players set .2 constant 2
 scoreboard players set .5 constant 5
 scoreboard players set .10 constant 10
-scoreboard players set .50 constant 50
 scoreboard players set .100 constant 100
-scoreboard players set .ln2 constant 693
+scoreboard players set .1000 constant 1000
+scoreboard players set .ln2 constant 6931
+scoreboard players set .bar_scale_divisor constant 500
 scoreboard players set .max_bar_length constant 20
 
-scoreboard players set .e_+100 constant 1105
-scoreboard players set .e_+10 constant 1010
-scoreboard players set .e_+1 constant 1001
-scoreboard players set .e_-100 constant 905
-scoreboard players set .e_-10 constant 990
-scoreboard players set .e_-1 constant 999
+scoreboard players set .e_+1000 constant 11052
+scoreboard players set .e_+100 constant 10101
+scoreboard players set .e_+10 constant 10010
+scoreboard players set .e_+1 constant 10001
+scoreboard players set .e_-1000 constant 9048
+scoreboard players set .e_-100 constant 9900
+scoreboard players set .e_-10 constant 9990
+scoreboard players set .e_-1 constant 9999
 
 # Euler helper variables
 scoreboard players set .exponent euler 0

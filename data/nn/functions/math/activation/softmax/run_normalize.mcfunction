@@ -1,7 +1,5 @@
-# Normalizes all logits going into the softmax function by subtracting by the smallest logit, assuming they are all positive.
-# Note that this does not affect the final output of the function!
+# Normalizes all logits going into the softmax function by subtracting by the largest logit, assuming it is significantly positive enough.
+# Note that this does not affect the final output of the softmax function; softmax is invariant to subtracting the same amount from all logits.
 
-$execute if score .min global matches 1.. run scoreboard players operation .$(layer)_$(to) neuron -= .min global
-
-# Also remove a constant amount from the exponent; in practice, the logits tend to explode
-# $scoreboard players remove .$(layer)_$(to) neuron 3000
+# Normalization threshold is hard-coded
+$execute if score .max global matches 50000.. run scoreboard players operation .$(layer)_$(j) neuron -= .max global

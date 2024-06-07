@@ -8,6 +8,7 @@ scoreboard players operation .deduct euler *= .ln2 constant
 scoreboard players operation .exponent euler -= .deduct euler
 
 # Compute factors for each increment of the exponent
+$function nn:math/e/deduct_exponent {var:$(var),obj:$(obj),increment:1000,sign:"+"}
 $function nn:math/e/deduct_exponent {var:$(var),obj:$(obj),increment:100,sign:"+"}
 $function nn:math/e/deduct_exponent {var:$(var),obj:$(obj),increment:10,sign:"+"}
 $function nn:math/e/deduct_exponent {var:$(var),obj:$(obj),increment:1,sign:"+"}

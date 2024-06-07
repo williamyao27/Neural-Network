@@ -1,5 +1,3 @@
-# This function uses a hard-coded scale factor.
-
 # Get derivative of error in the next layer with respect to error in this layer
 $scoreboard players operation .temp global = .$(next_layer)_$(to)_$(from) weight
 
