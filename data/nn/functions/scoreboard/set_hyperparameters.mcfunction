@@ -1,7 +1,7 @@
 # Sets the model hyperparameters.
 
 scoreboard players set .learning_rate hyperparameter 100
-scoreboard players set .lambda hyperparameter 100
+scoreboard players set .lambda hyperparameter 150
 scoreboard players set .batch_size hyperparameter 5
 scoreboard players set .img_x hyperparameter 28
 scoreboard players set .img_y hyperparameter 28
