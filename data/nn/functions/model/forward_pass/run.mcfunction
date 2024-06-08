@@ -30,5 +30,6 @@ function nn:math/max/run {layer:"output"}
 function nn:math/activation/softmax/layer {layer:"output"}
 
 # Display output
+function nn:model/display/print_output_logits
 function nn:model/display/print_prediction
 function nn:model/display/bar_graph/build
