@@ -1,6 +1,12 @@
 # Initializes all scoreboard objectives and variables, including model hyperparameters but excluding model parameters.
 
 # Create objectives
+scoreboard objectives remove brush
+scoreboard objectives add brush dummy
+
+scoreboard objectives remove raycast
+scoreboard objectives add raycast dummy
+
 scoreboard objectives remove global
 scoreboard objectives add global dummy
 

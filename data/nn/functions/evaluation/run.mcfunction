@@ -4,6 +4,7 @@
 scoreboard players add .predictions_this_report metric 1
 
 # Check whether or not the prediction is correct
+function nn:evaluation/print_truth
 $execute if score .argmax global matches $(target) run function nn:evaluation/correct with storage nn:helpers
 $execute unless score .argmax global matches $(target) run function nn:evaluation/incorrect
 

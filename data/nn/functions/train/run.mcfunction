@@ -1,6 +1,8 @@
 # Performs stochastic gradient descent using a randomly sampled training exampled.
 # This function is run on every tick but does nothing if there are no loader markers left.
 
+return fail
+
 # Cancel training if no markers are left
 execute unless entity @e[type=marker,tag=loader,limit=1] run return fail
 
