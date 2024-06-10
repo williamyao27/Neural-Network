@@ -15,4 +15,5 @@ $scoreboard players operation .sum global += .$(layer)_$(to) bias
 $scoreboard players operation .$(layer)_$(to) neuron = .sum global
 
 # Display neuron value with armor stand
+execute if score .visualize settings matches 1 store result storage nn:helpers name int 1.0 run scoreboard players get .sum global
 execute if score .visualize settings matches 1 run function nn:model/display/neuron/spawn_wrapper

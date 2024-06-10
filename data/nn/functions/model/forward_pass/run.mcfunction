@@ -7,11 +7,11 @@ function nn:model/display/neuron/remove_all
 function nn:model/input/process_image
 
 # Hidden layer 1
-function nn:model/forward_pass/layer {layer:"hidden1",prev_layer:"input"}
+function nn:model/forward_pass/layer {layer:"hidden1",prev_layer:"input",weight_visualization_threshold:999}
 function nn:math/activation/relu/layer {layer:"hidden1"}
 
 # Output layer
-function nn:model/forward_pass/layer {layer:"output",prev_layer:"hidden1"}
+function nn:model/forward_pass/layer {layer:"output",prev_layer:"hidden1",weight_visualization_threshold:5999}
 
 # Output logit report
 # Note that this must be done before running the output layer activation function as we want to print the

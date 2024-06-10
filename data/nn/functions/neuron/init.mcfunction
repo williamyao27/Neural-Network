@@ -11,7 +11,7 @@ summon marker 0 0.5 0 {Tags:["spawner"]}
 execute as @e[type=marker,tag=spawner,limit=1,sort=nearest] at @s run function nn:neuron/input/create_layer
 
 # Hidden layer 1
-tp @e[type=marker,tag=spawner,limit=1,sort=nearest] 14 62 20
+tp @e[type=marker,tag=spawner,limit=1,sort=nearest] 14 35 20
 execute as @e[type=marker,tag=spawner,limit=1,sort=nearest] at @s run function nn:neuron/create_layer {layer:"hidden1"}
 
 # Output layer

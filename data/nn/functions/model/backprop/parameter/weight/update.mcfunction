@@ -7,7 +7,7 @@ scoreboard players operation .temp global /= .batch_size hyperparameter
 # Weight regularization
 $scoreboard players operation .regularization global = .$(layer)_$(to)_$(from) weight
 function nn:math/multiply {var1:".regularization",obj1:"global",var2:".lambda",obj2:"hyperparameter"}
-$execute unless score .$(layer)_$(to)_$(from) weight matches -66..66 run scoreboard players operation .temp global += .regularization global
+$execute unless score .$(layer)_$(to)_$(from) weight matches -49..49 run scoreboard players operation .temp global += .regularization global
 
 # If the gradient is too small (with respect to the learning rate), cancel the update
 execute if score .temp global matches -99..99 run return 0
