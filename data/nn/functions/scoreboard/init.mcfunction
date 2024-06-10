@@ -40,6 +40,9 @@ scoreboard objectives add dataset dummy
 scoreboard objectives remove train
 scoreboard objectives add train dummy [{"text":"Training","color":"yellow","bold":true}]
 
+scoreboard objectives remove test
+scoreboard objectives add test dummy [{"text":"Testing","color":"yellow","bold":true}]
+
 scoreboard objectives remove metric
 scoreboard objectives add metric dummy [{"text":"Metrics","color":"yellow","bold":true}]
 scoreboard objectives setdisplay sidebar metric
@@ -110,14 +113,17 @@ function nn:scoreboard/set_dataset_parameters
 
 # Training variables
 scoreboard players set .total_iterations train 0
-scoreboard players set .iterations_this_epoch train 0
 scoreboard players set .epochs train 0
 scoreboard players set .batch_loop train 0
+
+# Testing variables
+scoreboard players set .iterations test 0
 
 # Metric variables
 scoreboard players set .predictions_this_report metric 0
 scoreboard players set .predictions_per_report metric 100
 scoreboard players set .report metric 0
+scoreboard players set .correct_test metric 0
 
 # Testing variables
 
