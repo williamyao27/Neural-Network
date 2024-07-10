@@ -1,3 +1,5 @@
+# Creates all neurons in the given layer.
+
 # Reset loops
 scoreboard players set .create_neuron_loop global 0
 

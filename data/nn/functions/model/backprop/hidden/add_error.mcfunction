@@ -1,3 +1,5 @@
+# Adds the error signal to the running gradient sum.
+
 # Get derivative of error in the next layer with respect to error in this layer
 $scoreboard players operation .temp global = .$(next_layer)_$(to)_$(from) weight
 

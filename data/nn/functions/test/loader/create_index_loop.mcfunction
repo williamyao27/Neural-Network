@@ -1,3 +1,5 @@
+# Creates a loader for the current index of the current class.
+
 # Create loader
 execute store result storage nn:helpers index int 1.0 run scoreboard players get .create_loader_index_loop global
 function nn:test/loader/create with storage nn:helpers

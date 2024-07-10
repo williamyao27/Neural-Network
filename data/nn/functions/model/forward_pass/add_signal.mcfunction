@@ -1,3 +1,5 @@
+# Adds the incoming signal from the given neuron in the previous layer to the running weighted sum.
+
 # Get previous layer value
 $scoreboard players operation .temp global = .$(prev_layer)_$(from) neuron
 

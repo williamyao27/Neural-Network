@@ -1,3 +1,5 @@
+# Deduct the given increment from the current exponent and multiplies the running product by the corresponding factor.
+
 # Compute how many times the given exponent increment fits into the current remaining exponent
 $scoreboard players operation .factors_$(increment) euler = .exponent euler
 $scoreboard players operation .factors_$(increment) euler /= .$(increment) constant

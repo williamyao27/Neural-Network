@@ -1,3 +1,5 @@
+# Perform all computations for the given layer during forward pass.
+
 $data merge storage nn:helpers {layer:$(layer)}
 $data merge storage nn:helpers {prev_layer:$(prev_layer)}
 $data merge storage nn:helpers {weight_visualization_threshold:$(weight_visualization_threshold)}

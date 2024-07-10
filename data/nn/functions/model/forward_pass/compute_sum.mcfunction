@@ -1,3 +1,5 @@
+# Computes the weighted sum for the given neuron's value.
+
 # Store index of current neuron whose sum is being computed
 execute store result storage nn:helpers to int 1.0 run data get entity @s data.j
 

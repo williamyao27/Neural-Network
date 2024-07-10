@@ -1,2 +1,0 @@
-tellraw @a [{"text":"Output 9: "},{"score":{"name":".output_9","objective":"neuron"},"color":"gold","bold":true}]
-tellraw @a [{"text":"Output 9 gradient: "},{"score":{"name":".output_9","objective":"gradient"},"color":"gold","bold":true}]

@@ -1,4 +1,4 @@
-# Raycast function for brush
+# Raycast function for brush.
 
 # If this hits a wall, paint it
 execute unless block ~ ~ ~ air run return run function nn:board/brush/paint

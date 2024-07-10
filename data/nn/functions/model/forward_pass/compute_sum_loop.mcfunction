@@ -1,3 +1,5 @@
+# Computes the weighted sum for the given neuron in a loop.
+
 # Store current node whose sum is being computed
 execute store result storage nn:helpers from int 1.0 run scoreboard players get .forward_pass_sum_loop_from global
 

@@ -1,3 +1,5 @@
+# Compute exponentiation for a negative exponent.
+
 # Since the exponent is negative, flip it so that the loop is a positive amount
 scoreboard players operation .exponent euler *= .-1 constant
 

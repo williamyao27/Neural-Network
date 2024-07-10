@@ -1,3 +1,5 @@
+# Compute exponentiation for a positive exponent
+
 # First, find how many times ln(2) can be removed from the exponent, which represents the increment of the
 # smallest integer factor we can extract for this computation.
 scoreboard players operation .double euler = .exponent euler

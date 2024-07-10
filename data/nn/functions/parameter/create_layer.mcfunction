@@ -1,3 +1,5 @@
+# Initializes all weights and biases in the given layer.
+
 $data merge storage nn:helpers {layer:$(layer)}
 
 # Reset loops

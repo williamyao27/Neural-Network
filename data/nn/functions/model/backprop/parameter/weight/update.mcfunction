@@ -1,3 +1,4 @@
+# Updates the weight with the given indices in the given layer based on the average gradient of the batch.
 # This function uses a hard-coded scale factor.
 
 # Formula

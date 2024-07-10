@@ -1,3 +1,5 @@
+# Computes the gradient for the neurons in the given layer.
+
 # Store current node whose error is being computed
 execute store result storage nn:helpers from int 1.0 run data get entity @s data.j
 $data merge storage nn:helpers {layer:$(layer)}

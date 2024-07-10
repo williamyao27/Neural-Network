@@ -1,3 +1,5 @@
+# Creates weights and biases in the given layer in a loop.
+
 # Create weight
 execute store result storage nn:helpers to int 1.0 run scoreboard players get .create_parameter_loop_to global
 execute store result storage nn:helpers from int 1.0 run scoreboard players get .create_parameter_loop_from global

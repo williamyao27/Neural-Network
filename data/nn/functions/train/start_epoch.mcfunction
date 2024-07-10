@@ -1,6 +1,10 @@
-# Start new epoch
+# Start a new training epoch.
+
+# Reset counters
 function nn:model/backprop/start_batch
 scoreboard players add .epochs train 1
+
+# Create loaders
 scoreboard players set .create_loader_class_loop global 0
 function nn:train/loader/create_class_loop
 

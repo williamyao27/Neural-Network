@@ -1,3 +1,5 @@
+# Creates loaders for all data points belonging to the current class.
+
 # Start index loop
 execute store result storage nn:helpers class int 1.0 run scoreboard players get .create_loader_class_loop global
 scoreboard players set .create_loader_index_loop global 0

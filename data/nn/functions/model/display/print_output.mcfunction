@@ -4,7 +4,7 @@
 
 tellraw @a [{"text":""}]
 tellraw @a [{"text":"===== REPORT =====","bold":true}]
-tellraw @a [{"text":"Output logits:","color":"yellow"}]
+tellraw @a [{"text":"Class probabilities:","color":"yellow"}]
 tellraw @a [{"text":"0: ","color":"gold"},{"score":{"name":".output_0","objective":"neuron"},"color":"white"}]
 tellraw @a [{"text":"1: ","color":"gold"},{"score":{"name":".output_1","objective":"neuron"},"color":"white"}]
 tellraw @a [{"text":"2: ","color":"gold"},{"score":{"name":".output_2","objective":"neuron"},"color":"white"}]

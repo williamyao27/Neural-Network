@@ -1,3 +1,5 @@
+# Updates the bias with the given index in the given layer based on the average gradient of the batch.
+
 # Formula
 $scoreboard players operation .temp global = .bias_$(layer)_$(to) gradient
 scoreboard players operation .temp global /= .batch_size hyperparameter

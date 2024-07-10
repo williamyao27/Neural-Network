@@ -1,4 +1,4 @@
-# Triggers the brush raycast
+# Triggers the brush raycast.
 
 # Reset brush raycast
 scoreboard players set @s raycast 0

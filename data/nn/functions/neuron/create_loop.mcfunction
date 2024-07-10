@@ -1,3 +1,5 @@
+# Creates neuonrs in the given layer in a loop.
+
 # Create neuron
 execute store result storage nn:helpers j int 1.0 run scoreboard players get .create_neuron_loop global
 $data merge storage nn:helpers {layer:$(layer)}

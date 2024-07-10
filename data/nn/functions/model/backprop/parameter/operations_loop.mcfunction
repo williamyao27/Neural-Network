@@ -1,3 +1,5 @@
+# Runs the given operation on all parameters in the given layer in a loop.
+
 # Operate on weight
 execute store result storage nn:helpers to int 1.0 run scoreboard players get .backprop_parameter_loop_to global
 execute store result storage nn:helpers from int 1.0 run scoreboard players get .backprop_parameter_loop_from global

@@ -1,3 +1,5 @@
+# Halves the running product the specified number of times.
+
 $scoreboard players operation $(var) $(obj) /= .2 constant
 
 # Loop

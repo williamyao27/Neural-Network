@@ -1,3 +1,5 @@
+# Multiplies the running product by the corresponding factor the specified number of times.
+
 # Multiply given variable by the given constant of e
 $scoreboard players operation $(var) $(obj) *= .e_$(sign)$(increment) constant
 $scoreboard players operation $(var) $(obj) /= .scale global

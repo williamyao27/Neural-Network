@@ -1,4 +1,6 @@
-# Store
+# Computes the gradient for the neurons in the given layer in a loop.
+
+# Store current error source
 execute store result storage nn:helpers to int 1.0 run scoreboard players get .backprop_sum_loop_to global
 
 # Add to running sum
